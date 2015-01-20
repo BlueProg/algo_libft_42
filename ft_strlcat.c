@@ -23,6 +23,8 @@ size_t	ft_strlcat(char *s1, const char *s2, size_t n)
 		s1[i] = s2[i];
 		i++;
 	}
+	if (n == 0)
+		return (ft_strlen(s2));
 	s1[i] = '\0';
-	return i;
+	return (ft_strlen(s1) + ft_strlen(s2));
 }

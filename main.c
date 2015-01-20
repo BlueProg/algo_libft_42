@@ -1376,10 +1376,12 @@ int				uf_test_strlcat(void)
 	memset(dest2, 0, sizeof(dest));
 	j = strlcat(dest, "Hello ", 4);
 	k = ft_strlcat(dest2, "Hello ", 4);
+	printf("m: %s, d: %s\n", dest, dest2);
 	if (strcmp(dest, dest2) != 0 || j != k)
 		D_ERROR
 			j = strlcat(dest, "Hello ", 1);
 	k = ft_strlcat(dest2, "Hello ", 1);
+	printf("m: %s, d: %s\n", dest, dest2);
 	if (strcmp(dest, dest2) != 0 || j != k)
 		D_ERROR
 			i = 0;
@@ -1416,7 +1418,6 @@ int				uf_test_strncat(void)
 		D_ERROR
 			strncat(dest, "Hello ", 2);
 	ft_strncat(dest2, "Hello ", 2);
-	printf("m: %s, a: %s\n", ft_strncat(dest2, "Hello "), strncat(dest, "Hello "));
 	if (strcmp(dest, dest2) != 0)
 		D_ERROR
 			strncat(dest, "Hello ", 10);

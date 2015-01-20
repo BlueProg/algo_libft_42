@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "unistd.h"
+#include "string.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
@@ -28,6 +28,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 		{
 			if (*tmpSrc == c)
 			{
+				tmpDst++;
 				return ((void *)tmpDst);
 			}
 			*tmpDst = *tmpSrc;
