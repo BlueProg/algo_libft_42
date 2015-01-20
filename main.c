@@ -1242,6 +1242,7 @@ int				uf_test_strcmp(void)
 	if (a)
 		D_ERROR;
 #endif
+	//printf("m: %d,  t: %d\n",ft_strcmp("cba", "abc"), strcmp("cba", "abc")); 
 	a = ft_strcmp("cba", "abc");
 #ifdef  __clang__
 	if (a != strcmp("cba", "abc"))
@@ -1415,6 +1416,7 @@ int				uf_test_strncat(void)
 		D_ERROR
 			strncat(dest, "Hello ", 2);
 	ft_strncat(dest2, "Hello ", 2);
+	printf("m: %s, a: %s\n", ft_strncat(dest2, "Hello "), strncat(dest, "Hello "));
 	if (strcmp(dest, dest2) != 0)
 		D_ERROR
 			strncat(dest, "Hello ", 10);
