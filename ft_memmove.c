@@ -22,12 +22,22 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	tmpSrc = (unsigned char *)src;
 	tmpDst = (unsigned char *)dst;
 	i = 0;
-	while (i < len)
+	if (tmpSrc < tmpDst)
 	{
-		*tmpSrc = *tmpSrc;
-		tmpSrc++;
-		tmpDst++;
-		i++;
+		tmpDst += len;
+		tmpSrc += len;
+		while (len--)
+			*--tmpDst = *--tmpSrc;
+	}
+	else
+	{
+		while (i < len)
+		{
+			*tmpDst = *tmpSrc;
+			tmpSrc++;
+			tmpDst++;
+			i++;
+		}
 	}
 	return (dst);
 }
