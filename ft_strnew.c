@@ -16,11 +16,11 @@
 
 char	*ft_strnew(size_t size)
 {
-	char	*mem;
-	size_t			i;
+	char		*mem;
+	size_t		i;
 
 	i = 0;
-	mem = (char *)malloc(sizeof(char ) * size);
+	mem = (char *)malloc(sizeof(char) * size);
 	if (mem)
 	{
 		while (i < size)

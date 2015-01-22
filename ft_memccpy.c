@@ -6,7 +6,7 @@
 /*   By: mmole <mmole@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 17:12:46 by mmole             #+#    #+#             */
-/*   Updated: 2015/01/19 17:12:47 by mmole            ###   ########.fr       */
+/*   Updated: 2015/01/22 15:48:54 by mmole            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,25 +15,25 @@
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t	i;
-	unsigned char *tmpDst;
-	unsigned char *tmpSrc;
+	size_t			i;
+	unsigned char	*tmp_dst;
+	unsigned char	*tmp_src;
 
 	i = 0;
 	if (dst && src)
 	{
-		tmpDst = (unsigned char *)dst;
-		tmpSrc = (unsigned char *)src;
+		tmp_dst = (unsigned char *)dst;
+		tmp_src = (unsigned char *)src;
 		while (i < n)
 		{
-			if (*tmpSrc == c)
+			if (*tmp_src == c)
 			{
-				tmpDst++;
-				return ((void *)tmpDst);
+				tmp_dst++;
+				return ((void *)tmp_dst);
 			}
-			*tmpDst = *tmpSrc;
-			tmpDst++;
-			tmpSrc++;
+			*tmp_dst = *tmp_src;
+			tmp_dst++;
+			tmp_src++;
 			i++;
 		}
 	}

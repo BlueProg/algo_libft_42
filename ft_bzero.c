@@ -6,7 +6,7 @@
 /*   By: mmole <mmole@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 17:12:46 by mmole             #+#    #+#             */
-/*   Updated: 2015/01/19 17:12:47 by mmole            ###   ########.fr       */
+/*   Updated: 2015/01/22 15:42:57 by mmole            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
+	size_t			i;
 	unsigned char	*tmp;
 
 	i = 0;

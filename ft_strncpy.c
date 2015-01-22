@@ -28,5 +28,5 @@ char	*ft_strncpy(char *dst, const char *src, size_t n)
 		dst[i] = '\0';
 		i++;
 	}
-	return dst;
+	return (dst);
 }

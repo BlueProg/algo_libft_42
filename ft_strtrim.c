@@ -32,15 +32,9 @@ char	*ft_strtrim(char const *s)
 		while (s[i] && (s[i] == ' ' || s[i] == '\n' || s[i] == '\t'))
 			i++;
 		while (s[j] && (s[j] == ' ' || s[j] == '\n' || s[j] == '\t'))
-		{
 			j--;
-		}
 		while (i < j + 1)
-		{
-			str[k] = s[i];
-			k++;
-			i++;
-		}
+			str[k++] = s[i++];
 		str[k] = '\0';
 		return (str);
 	}

@@ -6,7 +6,7 @@
 /*   By: mmole <mmole@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 17:12:46 by mmole             #+#    #+#             */
-/*   Updated: 2015/01/19 17:12:47 by mmole            ###   ########.fr       */
+/*   Updated: 2015/01/22 15:59:27 by mmole            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,25 +16,24 @@
 
 t_list	*ft_lstnew(void const *content, size_t content_size)
 {
-	t_list	*newElem;
+	t_list	*new_elem;
 
-	newElem = (t_list *)malloc(sizeof(t_list));
-	if (!newElem)
+	new_elem = (t_list *)malloc(sizeof(t_list));
+	if (!new_elem)
 		return (NULL);
 	if (!content)
 	{
-		newElem->content = NULL;
-		newElem->content_size = 0;
+		new_elem->content = NULL;
+		new_elem->content_size = 0;
 	}
 	else
 	{
-		newElem->content = (void *)malloc(content_size);
-		if (!newElem->content)
+		new_elem->content = (void *)malloc(content_size);
+		if (!new_elem->content)
 			return (NULL);
-		newElem->content = ft_memcpy(newElem->content, content, content_size);
-		newElem->content_size = (size_t)content_size;
+		new_elem->content = ft_memcpy(new_elem->content, content, content_size);
+		new_elem->content_size = (size_t)content_size;
 	}
-	newElem->next = NULL;
-
-	return newElem;
+	new_elem->next = NULL;
+	return (new_elem);
 }

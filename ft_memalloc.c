@@ -6,7 +6,7 @@
 /*   By: mmole <mmole@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 17:12:46 by mmole             #+#    #+#             */
-/*   Updated: 2015/01/19 17:12:47 by mmole            ###   ########.fr       */
+/*   Updated: 2015/01/22 15:47:46 by mmole            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memalloc(size_t size)
 	size_t			i;
 
 	i = 0;
-	mem = (unsigned char *)malloc(sizeof(unsigned char ) * size);
+	mem = (unsigned char *)malloc(sizeof(unsigned char) * size);
 	if (mem)
 	{
 		while (i < size)

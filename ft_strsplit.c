@@ -42,7 +42,7 @@ char	*ft_extract_word(char const *s, int index, char c)
 	{
 		i++;
 	}
-	str = (char *)malloc(sizeof(char ) * i - index);
+	str = (char *)malloc(sizeof(char) * i - index);
 	while (j < i - index)
 	{
 		str[j] = s[index + j];
@@ -77,11 +77,11 @@ char	*ft_give_word(char const *s, int index, char c)
 	return (NULL);
 }
 
-char 	**ft_strsplit(char const *s, char c)
+char	**ft_strsplit(char const *s, char c)
 {
-	int	i;
-	int	height;
-	char **tab;
+	int		i;
+	int		height;
+	char	**tab;
 
 	i = 0;
 	if (s && c)
