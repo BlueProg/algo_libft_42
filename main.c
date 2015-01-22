@@ -158,16 +158,16 @@ int					main(void)
 	D_ADD_TEST(strchr);
 #define	D_STRRCHR
 	D_ADD_TEST(strrchr);
-// #define	D_STRSTR
-	// D_ADD_TEST(strstr);
-//#define	D_STRNSTR
-//	D_ADD_TEST(strnstr);
+ #define	D_STRSTR
+	D_ADD_TEST(strstr);
+#define	D_STRNSTR
+	D_ADD_TEST(strnstr);
 #define	D_STRCMP
 	D_ADD_TEST(strcmp);
 #define	D_STRNCMP
 	D_ADD_TEST(strncmp);
-// #define	D_ATOI
-// 	D_ADD_HCTEST(atoi);
+#define	D_ATOI
+	D_ADD_HCTEST(atoi);
 #define	D_ISALPHA
 	D_ADD_HCTEST(isalpha);
 #define	D_ISDIGIT
@@ -182,8 +182,8 @@ int					main(void)
 	D_ADD_HCTEST(toupper);
 #define	D_TOLOWER
 	D_ADD_HCTEST(tolower);
-//#define	D_MEMALLOC_AND_DEL
-//	D_ADD_TEST(memalloc_and_del);
+#define	D_MEMALLOC_AND_DEL
+	D_ADD_TEST(memalloc_and_del);
 #define	D_STRNEW
 	D_ADD_TEST(strnew);
 #define	D_STRDEL
@@ -208,8 +208,8 @@ int					main(void)
 	D_ADD_TEST(strjoin);
 #define	D_STRSPLIT
 	D_ADD_TEST(strsplit);
-// #define	D_ITOA
-	// D_ADD_TEST(itoa);
+#define	D_ITOA
+	D_ADD_TEST(itoa);
 #define	D_STRTRIM
 	D_ADD_TEST(strtrim);
 /*#define	D_LSTNEW
@@ -1114,32 +1114,32 @@ int				uf_test_atoi(void)
 	char		str[12] = {0};
 
 	if (atoi("\n\v\t\r\f -123") != ft_atoi("\n\v\t\r\f -123"))
-		D_ERROR
-			if (atoi("12-3") != ft_atoi("12-3"))
-				D_ERROR
-					if (atoi("-+123") != ft_atoi("-+123"))
-						D_ERROR
-							if (atoi("a123") != ft_atoi("a123"))
-								D_ERROR
-									if (atoi("123a") != ft_atoi("123a"))
-										D_ERROR
-											if (atoi("123") != ft_atoi("123"))
-												D_ERROR
-													if (atoi("-123") != ft_atoi("-123"))
-														D_ERROR
-															if (atoi("+123") != ft_atoi("+123"))
-																D_ERROR
-																	if (atoi(" - 123") != ft_atoi(" - 123"))
-																		D_ERROR
-																			if (atoi("\t -123") != ft_atoi("\t -123"))
-																				D_ERROR
-																					if (atoi("-2147483648") != ft_atoi("-2147483648"))
-																						D_ERROR
-																							if (atoi("2147483647") != ft_atoi("2147483647"))
-																								D_ERROR
-																									if (atoi("") != ft_atoi(""))
-																										D_ERROR
-																											i = 0;
+	D_ERROR
+	if (atoi("12-3") != ft_atoi("12-3"))
+	D_ERROR
+	if (atoi("-+123") != ft_atoi("-+123"))
+	D_ERROR
+	if (atoi("a123") != ft_atoi("a123"))
+	D_ERROR
+	if (atoi("123a") != ft_atoi("123a"))
+	D_ERROR
+	if (atoi("123") != ft_atoi("123"))
+	D_ERROR
+	if (atoi("-123") != ft_atoi("-123"))
+	D_ERROR
+	if (atoi("+123") != ft_atoi("+123"))
+	D_ERROR
+	if (atoi(" - 123") != ft_atoi(" - 123"))
+	D_ERROR
+	if (atoi("\t -123") != ft_atoi("\t -123"))
+	D_ERROR
+	if (atoi("-2147483648") != ft_atoi("-2147483648"))
+	D_ERROR
+	if (atoi("2147483647") != ft_atoi("2147483647"))
+	D_ERROR
+	if (atoi("") != ft_atoi(""))
+	D_ERROR
+	i = 0;
 	while (i < RANDT)
 	{
 		j = 0;
@@ -1344,6 +1344,11 @@ int				uf_test_strchr(void)
 {
 	char		str[] = "Hello je tesx";
 
+	// printf("%p, %p\n", strchr(str, 'H'), ft_strchr(str, 'H'));
+	// printf("%p, %p\n", strchr(str, 'j'), ft_strchr(str, 'j'));
+	// printf("%p, %p\n", strchr(str, 'x'), ft_strchr(str, 'x'));
+	// printf("%p, %p\n", strchr(str, 'y'), ft_strchr(str, 'y'));
+	// printf(">%d<, >%d<\n", strchr(str, 0), ft_strchr(str, 0));
 	if (strchr(str, 'H') != ft_strchr(str, 'H'))
 		D_ERROR
 			if (strchr(str, 'j') != ft_strchr(str, 'j'))
@@ -1370,18 +1375,17 @@ int				uf_test_strlcat(void)
 	char		dest2[50] = {0};
 	size_t		i, j, k;
 
+
 	if (strlcat(dest, "Hello ", 4) != ft_strlcat(dest2, "Hello ", 4))
 		D_ERROR
 			memset(dest, 0, sizeof(dest));
 	memset(dest2, 0, sizeof(dest));
 	j = strlcat(dest, "Hello ", 4);
 	k = ft_strlcat(dest2, "Hello ", 4);
-	printf("m: %s, d: %s\n", dest, dest2);
 	if (strcmp(dest, dest2) != 0 || j != k)
 		D_ERROR
 			j = strlcat(dest, "Hello ", 1);
 	k = ft_strlcat(dest2, "Hello ", 1);
-	printf("m: %s, d: %s\n", dest, dest2);
 	if (strcmp(dest, dest2) != 0 || j != k)
 		D_ERROR
 			i = 0;

@@ -35,7 +35,7 @@ char	*ft_strtrim(char const *s)
 		{
 			j--;
 		}
-		while (i < j)
+		while (i < j + 1)
 		{
 			str[k] = s[i];
 			k++;

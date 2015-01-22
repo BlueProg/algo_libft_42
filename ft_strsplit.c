@@ -14,13 +14,15 @@
 #include "string.h"
 #include "stdlib.h"
 
+#include <stdio.h>
+
 int		ft_height(char const *s, char c)
 {
 	int	len;
 	int	i;
 
 	i = 0;
-	len = 0;
+	len = 1;
 	while (s[i])
 	{
 		if (s[i] == c)
@@ -87,13 +89,17 @@ char 	**ft_strsplit(char const *s, char c)
 	if (s && c)
 	{
 		height = ft_height(s, c);
-		tab = (char **)malloc(sizeof(char *) * height);
+		tab = (char **)malloc(sizeof(char *) * (height + 1));
+		if (!tab)
+		{
+			return (NULL);
+		}
 		while (i < height)
 		{
 			tab[i] = ft_give_word(s, i, c);
 			i++;
 		}
-		tab[i] = "\0";
+		tab[i] = 0;
 		return (tab);
 	}
 	return (NULL);

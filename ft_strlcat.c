@@ -13,18 +13,24 @@
 #include "libft.h"
 #include <unistd.h>
 
-size_t	ft_strlcat(char *s1, const char *s2, size_t n)
+size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
-	size_t	i;
+	size_t		nsv;
+	size_t		buff;
+	size_t		size2;
 
-	i = 0;
-	while (s1[i] && s2[i] && i < n)
+	nsv = size;
+	size2 = ft_strlen(src);
+	buff = ft_strlen(dst) + size2;
+	while (*dst && size)
 	{
-		s1[i] = s2[i];
-		i++;
+		dst++;
+		size--;
 	}
-	if (n == 0)
-		return (ft_strlen(s2));
-	s1[i] = '\0';
-	return (ft_strlen(s1) + ft_strlen(s2));
+	if (size == 0)
+		return (nsv + size2);
+	while (*src && size-- > 1)
+		*dst++ = *src++;
+	*dst = 0;
+	return (buff);
 }

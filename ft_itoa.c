@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmole <mmole@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,26 +11,49 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "unistd.h"
+#include <string.h>
+#include <stdlib.h>
 
-#include <stdio.h>
-
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+static void		lengths(int n, size_t *len, int *weight)
 {
-	size_t	i;
-	unsigned char	*tmpS1;
-	unsigned char	*tmpS2;
-
-	i = 0;
-	tmpS1 = (unsigned char *)s1;
-	tmpS2 = (unsigned char *)s2;
-	while (i < n)
+	*len = 1;
+	if (n >= 0)
 	{
-		if (*tmpS1 != *tmpS2)
-			return (*tmpS1 - *tmpS2);
-		i++;
-		tmpS1++;
-		tmpS2++;
+		*len = 0;
+		n = -n;
 	}
-	return (0);
+	*weight = 1;
+	while (n / *weight < -9)
+	{
+		*weight *= 10;
+		*len += 1;
+	}
+}
+
+char			*ft_itoa(int n)
+{
+	size_t		len;
+	int			weight;
+	size_t		cur;
+	char		*str;
+
+	lengths(n, &len, &weight);
+	str = (char *)malloc(sizeof(*str) * (len + 1));
+	if (str == NULL)
+		return (NULL);
+	cur = 0;
+	if (n < 0)
+	{
+		str[cur] = '-';
+		cur++;
+	}
+	if (n > 0)
+		n = -n;
+	while (weight >= 1)
+	{
+		str[cur++] = -(n / weight % 10) + 48;
+		weight /= 10;
+	}
+	str[cur] = '\0';
+	return (str);
 }

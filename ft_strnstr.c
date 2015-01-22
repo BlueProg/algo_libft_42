@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcmp.c                                        :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmole <mmole@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,26 +11,33 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "unistd.h"
+#include <string.h>
 
-#include <stdio.h>
-
-int		ft_memcmp(const void *s1, const void *s2, size_t n)
+char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 {
 	size_t	i;
-	unsigned char	*tmpS1;
-	unsigned char	*tmpS2;
+	size_t	j;
+	char	*tmp;
 
 	i = 0;
-	tmpS1 = (unsigned char *)s1;
-	tmpS2 = (unsigned char *)s2;
-	while (i < n)
+	tmp = (char *)s1;
+	if (!s2 || !*s2)
+		return (tmp);
+	if (s1)
 	{
-		if (*tmpS1 != *tmpS2)
-			return (*tmpS1 - *tmpS2);
-		i++;
-		tmpS1++;
-		tmpS2++;
+		while (s1[i])
+		{
+			j = 0;
+			while (s1[i] != '\0' && s1[i] == s2[j] && j < n)
+			{
+				i++;
+				j++;
+			}
+			if (s2[j] == '\0')
+				return (tmp + (i - ft_strlen(s2)));
+			i = i - j;
+			i++;
+		}
 	}
-	return (0);
+	return (NULL);
 }
