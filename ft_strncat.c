@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
+#include <string.h>
 
 char	*ft_strncat(char *s1, const char *s2, size_t n)
 {

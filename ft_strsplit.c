@@ -11,10 +11,8 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "string.h"
-#include "stdlib.h"
-
-#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 int		ft_height(char const *s, char c)
 {

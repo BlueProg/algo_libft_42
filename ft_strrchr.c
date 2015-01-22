@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <unistd.h>
+#include <string.h>
 
 char	*ft_strrchr(const char *str, int c)
 {

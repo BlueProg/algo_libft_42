@@ -32,8 +32,8 @@ FLAGS	= -Wall -Werror -Wextra
 
 all: $(NAME)
 
-$(NAME): includes/libft.h
-		gcc $(FLAGS) -c $(SRCS) -I includes/
+$(NAME): libft.h
+		gcc $(FLAGS) -c $(SRCS) -I .
 		ar rc $(NAME) $(OBJS)
 
 clean:

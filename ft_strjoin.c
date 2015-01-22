@@ -14,8 +14,6 @@
 #include <string.h>
 #include <stdlib.h>
 
-#include <stdio.h>
-
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*str;
