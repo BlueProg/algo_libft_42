@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*   ft_lstaddlast.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mmole <mmole@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,21 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
 #include "libft.h"
 
-int	ft_strcmp(const char *s1, const char *s2)
+void	ft_lstaddlast(t_list **lst, t_list *add)
 {
-	unsigned char	*str1;
-	unsigned char	*str2;
+	t_list	*tmp;
 
-	str1 = (unsigned char *)s1;
-	str2 = (unsigned char *)s2;
-	while (*str1 || *str2)
+	tmp = *lst;
+	if (tmp != NULL)
 	{
-		if (*str1 != *str2)
-			return (*str1 - *str2);
-		str1++;
-		str2++;
+		while (tmp->next != NULL)
+			tmp = tmp->next;
+		tmp->next = add;
 	}
-	return (0);
+	else
+		*lst = add;
 }

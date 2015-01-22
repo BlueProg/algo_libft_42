@@ -222,8 +222,8 @@ int					main(void)
 	D_ADD_TEST(lstadd);
 #define	D_LSTITER
 	D_ADD_TEST(lstiter);
-/*#define D_LSTMAP
-	D_ADD_TEST(lstmap);*/
+#define D_LSTMAP
+	D_ADD_TEST(lstmap);
 	while (test[i].set == true)
 	{
 		printf("Test [%s] : ", test[i].name);
@@ -307,6 +307,8 @@ int					uf_test_lstmap(void)
 	lst_initial->next->next = ft_lstnew((void const *) content, 5);
 	f = &uf_testmap;
 	lst = ft_lstmap(lst_initial, f);
+	printf("passe\n");
+	printf("1: %s\n", (const char *)lst_initial->content);
 	if (!strcmp((const char *) lst->content, (const char *) lst_initial->content) || strcmp((const char *) lst->content, "upup"))
 		D_ERROR;
 	if (!strcmp((const char *) lst->next->content, (const char *) lst_initial->next->content) || strcmp((const char *) lst->next->content, "ubub"))
