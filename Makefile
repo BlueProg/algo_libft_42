@@ -26,7 +26,7 @@ SRCS	=	ft_strlen.c ft_bzero.c ft_memset.c ft_memcpy.c \
 			ft_putendl.c ft_putnbr.c ft_putchar_fd.c ft_putstr_fd.c \
 			ft_putendl_fd.c ft_putnbr_fd.c ft_itoa.c \
 			ft_lstnew.c ft_lstdelone.c ft_lstdel.c ft_lstadd.c \
-			ft_lstiter.c ft_lstmap.c ft_lstaddlast.c
+			ft_lstiter.c ft_lstmap.c ft_lstaddlast.c ft_sortbubble.c
 
 
 OBJS	= ${SRCS:.c=.o}
