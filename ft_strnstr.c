@@ -6,7 +6,7 @@
 /*   By: mmole <mmole@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/19 17:12:46 by mmole             #+#    #+#             */
-/*   Updated: 2015/01/19 17:12:47 by mmole            ###   ########.fr       */
+/*   Updated: 2015/01/24 21:22:28 by mmole            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ char	*ft_strnstr(const char *s1, const char *s2, size_t n)
 		while (s1[i])
 		{
 			j = 0;
-			while (s1[i] != '\0' && s1[i] == s2[j] && j < n)
+			while (s1[i] != '\0' && s1[i] == s2[j] && i < n)
 			{
 				i++;
 				j++;
