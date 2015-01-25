@@ -85,5 +85,9 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 
 void				ft_sortbubble(int **tab, size_t n);
+void				ft_sortinsertion(int **tab, size_t n);
+void				ft_sortshell(int **tab, size_t n);
+void				ft_sortquick(int **tab, size_t n);
+void				ft_swap(int *a, int *b);
 
 #endif
