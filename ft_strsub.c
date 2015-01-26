@@ -23,9 +23,9 @@ char	*ft_strsub(char const *s, unsigned int start, size_t len)
 	str = (char *)malloc(sizeof(char) * len + 1);
 	if (!str)
 		return (NULL);
-	if (s && ((start + len) <= ft_strlen(s)))
+	if (s && *s)
 	{
-		while (i < (len + start))
+		while (s[i] && i < (len + start))
 		{
 			str[i - start] = s[i];
 			i++;
