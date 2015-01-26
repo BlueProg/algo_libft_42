@@ -13,31 +13,19 @@
 #include "libft.h"
 #include <string.h>
 
-#include <stdio.h>
-
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
-	size_t			i;
-	unsigned char	*tmp_dst;
-	unsigned char	*tmp_src;
+	unsigned char		*strdst;
+	const unsigned char	*strsrc;
+	unsigned char		car;
 
-	i = 0;
-	if (dst && src)
+	strdst = (unsigned char*)dst;
+	strsrc = (const unsigned char*)src;
+	car = (unsigned char)c;
+	while (n--)
 	{
-		tmp_dst = (unsigned char *)dst;
-		tmp_src = (unsigned char *)src;
-		while (i < n)
-		{
-			if (*tmp_src == (unsigned char)c)
-			{
-				tmp_dst++;
-				return ((void *)tmp_dst);
-			}
-			*tmp_dst = *tmp_src;
-			tmp_dst++;
-			tmp_src++;
-			i++;
-		}
+		if ((*strdst++ = *strsrc++) == car)
+			return (strdst);
 	}
 	return (NULL);
 }

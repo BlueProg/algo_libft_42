@@ -62,19 +62,13 @@ char	*ft_give_word(char const *s, int index, char c)
 	i = 0;
 	while (s[i])
 	{
-		if (s[i] == c || index == 0)
+		while (s[i] && s[i] == c)
+			i++;
+		if (s[i] && index == 0)
 		{
-			while (s[i] && s[i] == c)
-				i++;
-			if (s[i])
-			{
-				if (index == 0)
-				{
-					return (ft_extract_word(s + i, c));
-				}
-				index--;
-			}
+			return (ft_extract_word(s + i, c));
 		}
+		index--;
 		while (s[i] && s[i] != c)
 			i++;
 	}
